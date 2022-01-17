@@ -24,7 +24,7 @@ public class ForgettingMapTest {
 
 
 	@Test
-	public void testAddElementToFullMap() {
+	public void testLeastUsedKeyIsRemoved() {
 		ForgettingMap<String, String> map = new ForgettingMap<>(7);
 		
 		// add 7 items to the Forgetting Map without accessing any key in between
@@ -44,11 +44,12 @@ public class ForgettingMapTest {
 		}
 		// add a new element now will remove the key6 as that is the least accessed one
 		map.add("testKey", "testValue");
+		assertTrue(map.isKeyPresent("testKey");
 		assertFalse(map.isKeyPresent("key6"));
 	}
 	
 	@Test
-	public void testLeastUsedKeyIsRemoved() {
+	public void testAddElementToFullMap() {
 		ForgettingMap<String, String> map = new ForgettingMap<>(2);
 		
 		// add two elements to forgettingMap
